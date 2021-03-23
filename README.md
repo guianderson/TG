@@ -2,9 +2,6 @@
 
 **Tema: Plataforma de distribuição de dados de Queimadas no território brasileiro provenientes de satélites do INPE.**
 
-O projeto a ser desenvolvido será um fórum para realizar a comunicação entre alunos da FATEC.
-Os usuários poderão enviar questões e levantar questionamentos a serem discutidos pelos demais.
-
 # Introdução:
 
 No ano de 2020 muitas questões a respeito das Queimadas no território brasileiro foram levantadas, mais precisamente no território do Pantanal brasileiro.
