@@ -12,10 +12,8 @@ Por conta de muitas informações serem divulgadas e muitas vezes a população 
 O **PROJETO** é baseado em princípios REST. Os recursos de dados são acessados via solicitações FTP / HTTP, posteriormente a isso o download dos dados é realizado pelo usuário automaticamente após o mesmo informar o período dos dados da informação que deseja realizar o download.
 
 # Tecnologias Utilizadas:
-* **
 * **Em desenvolvimento**
 
 # Objetivo do Projeto
-* **
 O objetivo geral deste projeto é proporcionar para a população a possibilidade de pesquisar por conta própria sobre as queimadas no território brasileiro, disponibilizando dados de queimadas a partir do ano de XXXX, tudo isso de forma fácil e gratuita.
 O desenvolvimento deste trabalho é de fundamental importância para que a população deixe de estar à mercê de especulações e/ou **“Fake News”** (Notícias falsas) e possam buscar e desenvolver suas próprias opiniões.
