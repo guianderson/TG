@@ -1,0 +1,120 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Terra MA - Collector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='img/favicons/apple-touch-icon.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='img/img/favicons/favicon-32x32.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='img/favicons/favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='img/favicons/mstile-150x150.png') }}">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,300&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/theme.css') }}">
+</head>
+<body>
+    <main class="main">
+      <nav class="navbar navbar-expand-lg navbar-light bg-white py-4 pl-0">
+        <div class="container">
+          <img src="static/img/logo_terraMA.png" style="width: 30%"></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item text-muted"><a class="nav-link active" aria-current="page" href="index.html">Início</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Sobre</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Equipe</a></li>
+              <li class="nav-item dropdown"><a class="nav-link" id="navbarDropdowndoc" href="#" role="button" data-toggle="dropdown" aria-expanded="false">Documentação</a>
+                <div class="dropdown-menu navbar-dropdown-menu" aria-labelledby="navbarDropdowndoc">
+                  <div class="list-group list-group-flush"><a class="list-group-item py-3 d-flex align-items-center" href="documentation.html"><img src="assets/img/gallery/document.png" alt="">
+                      <div class="ml-3"><span class="font-weight-bold text-uppercase text-primary">Documentation</span>
+                        <p class="text-secondary mb-0">Customizing and building</p>
+                      </div>
+                    </a><a class="list-group-item py-3 d-flex align-items-center" href="#"><img src="assets/img/gallery/components.png" alt="">
+                      <div class="ml-3"><span class="font-weight-bold text-uppercase text-primary">Components</span>
+                        <p class="text-secondary mb-0">Full list of components</p>
+                      </div>
+                    </a><a class="list-group-item py-3 d-flex align-items-center" href="#"><img src="assets/img/gallery/bar_chart.png" alt="">
+                      <div class="ml-3"><span class="font-weight-bold text-uppercase text-primary">Changelog <span class="badge badge-secondary bg-light text-primary">1.1.3</span></span>
+                        <p class="text-secondary mb-0">Keep track of changes</p>
+                      </div>
+                    </a></div>
+                </div>
+              </li>
+            </ul><a class="btn btn-primary ml-auto hover-top-shadow" href="#!">Entrar</a>
+          </div>
+        </div>
+      </nav>
+        {% block content %}
+        {% endblock %}
+      <div class="shape-arc-down"><img class="w-100" src="static/img/gallery/shape-down.svg" alt=""></div>
+      <section class="py-7">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-lg-3">
+              <h4 class="text-primary font-weight-bold">Bridge</h4>
+              <p class="mb-2 text-muted">Where design connects <br> with excellence.</p>
+              <ul class="list-unstyled list-inline mb-6 mb-md-0">
+                <li class="list-inline-item mr-2"><a class="text-decoration-none" href="#!"><img class="list-social-icon" src="assets/img/gallery/facebook.svg" alt="" width="25"></a></li>
+                <li class="list-inline-item mr-2"><a class="text-decoration-none" href="#!"><img class="list-social-icon" src="assets/img/gallery/linkedin.svg" alt="" width="25"></a></li>
+                <li class="list-inline-item mr-2"><a class="text-decoration-none" href="#!"><img class="list-social-icon" src="assets/img/gallery/instagram.svg" alt="" width="25"></a></li>
+                <li class="list-inline-item"><a class="text-decoration-none" href="#!"><img class="list-social-icon" src="assets/img/gallery/github.svg" alt="" width="25"></a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <h6 class="footer-title">Products</h6>
+              <ul class="list-unstyled mb-6 mb-md-4 mb-lg-0">
+                <li class="mb-2 mb-lg-2"><a class="text-500 text-decoration-none" href="#!">Page Builder</a></li>
+                <li class="mb-2 mb-lg-2"><a class="text-500 text-decoration-none" href="#!">UI Kit</a></li>
+                <li class="mb-2 mb-lg-2"><a class="text-500 text-decoration-none" href="#!">Styleguide</a></li>
+                <li class="mb-2 mb-lg-2"><a class="text-500 text-decoration-none" href="#!">Documentation</a></li>
+                <li><a class="text-500 text-decoration-none" href="#!">Changelog</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <h6 class="footer-title">Services</h6>
+              <ul class="list-unstyled mb-6 mb-md-4 mb-lg-0">
+                <li class="mb-2 mb-lg-2"><a class="text-500 text-decoration-none" href="#!">Documentation</a></li>
+                <li class="mb-2 mb-lg-2"><a class="text-500 text-decoration-none" href="#!">Changelog</a></li>
+                <li class="mb-2 mb-lg-2"><a class="text-500 text-decoration-none" href="#!">Pagebuilder</a></li>
+                <li><a class="text-500 text-decoration-none" href="#!">UI Kit</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-4 offset-md-4 col-lg-2 offset-lg-0">
+              <h6 class="footer-title">Connect</h6>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2 mb-lg-2"><a class="text-500 text-decoration-none" href="#!">Page Builder</a></li>
+                <li class="mb-2 mb-lg-2"><a class="text-500 text-decoration-none" href="#!">UI Kit</a></li>
+                <li class="mb-2 mb-lg-2"><a class="text-500 text-decoration-none" href="#!">Styleguide</a></li>
+                <li class="mb-2 mb-lg-2"><a class="text-500 text-decoration-none" href="#!">Documentation</a></li>
+                <li class="mb-2 mb-lg-2"><a class="text-500 text-decoration-none" href="#!">Changelog</a></li>
+                <li class="mb-2 mb-lg-2"><a class="text-500 text-decoration-none" href="#!">Documentation</a></li>
+              </ul>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+              <h6 class="footer-title">Legal</h6>
+              <ul class="list-unstyled mb-0">
+                <li class="mb-2 mb-lg-2"><a class="text-500 text-decoration-none" href="#!">Documentation</a></li>
+                <li class="mb-2 mb-lg-2"><a class="text-500 text-decoration-none" href="#!">Changelog</a></li>
+                <li><a class="text-500 text-decoration-none" href="#!">Pagebuilder </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="text-center border-top footer-text py-3">
+
+        <div class="container">Made with ❤️ by <a class="text-500 text-decoration-none" href="https://themewagon.com/"> ThemeWagon </a>
+        </div>
+        <!-- end of .container-->
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/plugins.js') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/is/is.min.js') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='lib/stickyfilljs/stickyfill.min.js') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/theme.js') }}">
+</body>
+</html>

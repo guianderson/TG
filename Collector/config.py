@@ -1,0 +1,3 @@
+FLASK_DEBUG = True
+DEBUG = True
+SECRET_KEY = '123'
