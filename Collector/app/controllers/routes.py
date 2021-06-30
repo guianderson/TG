@@ -49,3 +49,23 @@ def download_by_name(nome_arquivo):
 @app.route("/index")
 def index():
     return render_template('index.html')
+
+@app.route("/data/<dt_inicial>")
+def data(dt_inicial):
+    dia_inicial = dt_inicial[:2]
+    mes_inicial = dt_inicial[2:4]
+    ano_inicial = dt_inicial[4:]
+    hora = []
+    file = 'focos_terrama2q_'+ano_inicial+''+mes_inicial+''+dia_inicial+'_'
+    for d in range(0000, 2360, 10):
+        if d < 10:
+            hora.append(file + "000" + str(d) + '.csv')
+        elif 10 <= d <= 90:
+            hora.append(file + "00" + str(d) + '.csv')
+        elif 100 <= d <= 999:
+            hora.append(file + "0" + str(d) + '.csv')
+        else:
+            hora.append(file + str(d) + '.csv')
+    return str(hora)
+
+
