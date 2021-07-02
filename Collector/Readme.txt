@@ -1,1 +1,0 @@
-para ativar modo Debug: export FLASK_DEBUG=1
