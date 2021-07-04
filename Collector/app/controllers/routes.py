@@ -146,83 +146,340 @@ def downbetwendate(dt_inicial, dt_final):
     for i in range(delta.days + 1):
         days.append(sdate + timedelta(days=i))
 
+    # TODO: Forma de verificar qundo o for 0301 e 0308 pois estes dias os horarios terminar com 1.csv não 0.csv como é
+    #  o padrão
+
     for day in days:
-        if day.month < 10 and day.day < 10:
+        if day.day < 10 and day.month < 10:
             for d in range(0, 60, 10):
                 if d < 10:
-                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_000"
-                                          + str(d) + '.csv')
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) +
+                                          "_000" + str(d) + '.csv')
                 elif 10 <= d <= 90:
-                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_00"
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) +
+                                          "_00" + str(d) + '.csv')
+            if day.day >= 10 and day.month < 10:
+                for d in range(0, 60, 10):
+                    if d < 10:
+                        full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + "_000"
+                                              + str(d) + '.csv')
+                    elif 10 <= d <= 90:
+                        full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + "_00" +
+                                              str(d) + '.csv')
+            if day.day < 10 and day.month >= 10:
+                for d in range(0, 60, 10):
+                    if d < 10:
+                        full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + "_000"
+                                              + str(d) + '.csv')
+                    elif 10 <= d <= 90:
+                        full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + "_00" +
+                                              str(d) + '.csv')
+            if day.day < 10 and day.month >= 10:
+                for d in range(0, 60, 10):
+                    if d < 10:
+                        full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + "_000" +
+                                              str(d) + '.csv')
+                    elif 10 <= d <= 90:
+                        full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + "_00" + str(d)
+                                              + '.csv')
+            for d in range(100, 160, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_0' + str(d)
+                                          + '.csv')
+            for d in range(200, 260, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_0'
                                           + str(d) + '.csv')
-        for d in range(100, 160, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_0" +
-                                  str(d) + '.csv')
-        for d in range(200, 260, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_0" +
-                                  str(d) + '.csv')
-        for d in range(300, 360, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_0" + str(d)
-                                  + '.csv')
-        for d in range(400, 460, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_0" + str(d)
-                                  + '.csv')
-        for d in range(500, 560, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_0" + str(d)
-                                  + '.csv')
-        for d in range(600, 660, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_0" + str(d)
-                                  + '.csv')
-        for d in range(700, 760, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_0" + str(d)
-                                  + '.csv')
-        for d in range(800, 860, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_0" + str(d)
-                                  + '.csv')
-        for d in range(900, 960, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_0" + str(d)
-                                  + '.csv')
-        for d in range(1000, 1060, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_" + str(d)
-                                  + '.csv')
-        for d in range(1100, 1160, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_" + str(d)
-                                  + '.csv')
-        for d in range(1200, 1260, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_" + str(d)
-                                  + '.csv')
-        for d in range(1300, 1360, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_" + str(d)
-                                  + '.csv')
-        for d in range(1400, 1460, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_" + str(d)
-                                  + '.csv')
-        for d in range(1500, 1560, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_" + str(d)
-                                  + '.csv')
-        for d in range(1600, 1660, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_" + str(d)
-                                  + '.csv')
-        for d in range(1700, 1760, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_" + str(d)
-                                  + '.csv')
-        for d in range(1800, 1860, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_" + str(d)
-                                  + '.csv')
-        for d in range(1900, 1960, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_" + str(d)
-                                  + '.csv')
-        for d in range(2000, 2060, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_" + str(d)
-                                  + '.csv')
-        for d in range(2100, 2160, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_" + str(d)
-                                  + '.csv')
-        for d in range(2200, 2260, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_" + str(d)
-                                  + '.csv')
-        for d in range(2300, 2360, 10):
-            full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + "_" + str(d)
-                                  + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_0' + str(d) +
+                                          '.csv')
+            for d in range(300, 360, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_0'
+                                          + str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_0' + str(d) +
+                                          '.csv')
+            for d in range(400, 460, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_0'
+                                          + str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_0' + str(d)
+                                          + '.csv')
+            for d in range(500, 560, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_0'
+                                          + str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_0' + str(d)
+                                          + '.csv')
+            for d in range(600, 660, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_0'
+                                          + str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_0' + str(d) +
+                                          '.csv')
+            for d in range(700, 760, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_0'
+                                          + str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_0' + str(d) +
+                                          '.csv')
+            for d in range(800, 860, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_0'
+                                          + str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_0' + str(d)
+                                          + '.csv')
+            for d in range(900, 960, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_0'
+                                          + str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_0' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_0' + str(d) +
+                                          '.csv')
+            for d in range(1000, 1060, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_'
+                                          + str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_' + str(d) +
+                                          '.csv')
+            for d in range(1100, 1160, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_' + str(d) +
+                                          '.csv')
+            for d in range(1200, 1260, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_' + str(d) +
+                                          '.csv')
+            for d in range(1300, 1360, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_' + str(d) +
+                                          '.csv')
+            for d in range(1400, 1460, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_' + str(d) +
+                                          '.csv')
+            for d in range(1500, 1560, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_' + str(d) +
+                                          '.csv')
+            for d in range(1600, 1660, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_' + str(d) +
+                                          '.csv')
+            for d in range(1700, 1760, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_' + str(d) +
+                                          '.csv')
+            for d in range(1800, 1860, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_' + str(d) +
+                                          '.csv')
+            for d in range(1900, 1960, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_'
+                                          + str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_' +
+                                          str(d) + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_' + str(d) +
+                                          '.csv')
+            for d in range(2000, 2060, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_' + str(d) +
+                                          '.csv')
+            for d in range(2100, 2160, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_' + str(d) +
+                                          '.csv')
+            for d in range(2200, 2260, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day < 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_' + str(d) +
+                                          '.csv')
+            for d in range(2300, 2360, 10):
+                if day.day < 10 and day.month < 10:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + '0' + str(day.day) + '_' +
+                                          str(d) + '.csv')
+                elif day.day >= 10 > day.month:
+                    full_file_name.append(file_name + str(day.year) + '0' + str(day.month) + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day < 10 <= day.month:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + '0' + str(day.day) + '_' + str(d)
+                                          + '.csv')
+                elif day.day >= 10 and day.month >= 10:
+                    full_file_name.append(file_name + str(day.year) + str(day.month) + str(day.day) + '_' + str(d) +
+                                          '.csv')
 
     return str(full_file_name)
