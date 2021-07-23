@@ -24,6 +24,7 @@ def index():
 def collector():
 
     log = []
+    global files_list
     files_list = []
     nonpassive = False
 
@@ -38,6 +39,18 @@ def collector():
     del (files_list[0:2])
 
     return str(files_list)
+
+@app.route("/collector/teste/<ini>/<dia_fim>")
+def download_teste(ini, dia_fim):
+    new_file_list = []
+
+    dia_ini = ini[:2]
+    mes_ini = ini[2:4]
+    ano_ini = ini[4:]
+    full_dia = 'focos_terrama2q_' + ano_ini + mes_ini + dia_ini + '_0000.csv'
+    for f in files_list:
+        new_file_list.append(f)
+    return full_dia
 
 
 @app.route("/collector/download/<nome_arquivo>")
